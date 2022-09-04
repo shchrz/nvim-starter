@@ -1,32 +1,88 @@
 # Neovim Starter
 
-## Configurations
+Minimal working configuration for Neovim's LSP client + nvim-cmp.
 
-* [00-minimal](https://github.com/VonHeikemen/nvim-starter/tree/00-minimal): Small configuration without third party plugins.
-* [01-base](https://github.com/VonHeikemen/nvim-starter/tree/01-base): Small configuration that includes a plugin manager. It can provide a good base to start your own configuration.
-* [02-opinionated](https://github.com/VonHeikemen/nvim-starter/tree/02-opinionated): An opinionated configuration. It includes popular plugins used by the community. For the people who are looking to make Neovim their main editor but don't want to start from scratch. Plugins related to "code intellisense" are not included in this config.
-* [03-lsp](https://github.com/VonHeikemen/nvim-starter/tree/03-lsp): Example configuration showing how to configure the built-in LSP client with autocompletion. It is based on `02-opinionated` so it has the same set of plugins.
-* [04-lsp-installer](https://github.com/VonHeikemen/nvim-starter/tree/04-lsp-installer): Same as `03-lsp`, but uses `mason.nvim` to install language servers.
-* [05-modular](https://github.com/VonHeikemen/nvim-starter/tree/05-modular): Same as `04-lsp-installer` but everything is split in modules.
+The following language servers are configured:
 
-## Other template configurations
+* tsserver
+* eslint
+* cssls
+* html
 
-* [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-* [nvim-basic-ide](https://github.com/LunarVim/nvim-basic-ide)
-* [cosynvim](https://github.com/glepnir/cosynvim)
+## Requirements
 
-## Learn how to configure Neovim
+* Neovim v0.7 or greater.
+* git.
+* [tsserver](https://github.com/theia-ide/typescript-language-server). Typescript language server.
+* [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted). Provides language servers for `eslint`, `css` and `html`.
+* [npm cli](https://docs.npmjs.com/cli/v8/commands/npm). Javascript package manager.
+* [nodejs](https://nodejs.org/es/). Javascript runtime. Required by the language servers.
 
-* [Build your first Neovim configuration in lua](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
-* [Neovim: Plugins to get started](https://vonheikemen.github.io/devlog/tools/neovim-plugins-to-get-started/)
-* [Setup nvim-lspconfig + nvim-cmp](https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/)
-* [Move from init.vim to init.lua](https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/)
-* [nvim-lua-guide](https://github.com/nanotee/nvim-lua-guide)
+## Installation
 
-## Videos
+* Backup your existing configuration if you have one.
 
-* [Debugging in Neovim](https://www.youtube.com/watch?v=0moS8UHupGc)
-* [Neovim lua plugin from scratch](https://www.youtube.com/watch?v=n4Lp4cV8YR0)
-* [Neovim - Rust IDE](https://www.youtube.com/watch?v=gfQ6Ae4lvL0)
-* [Neovim - Setting up a Java IDE](https://www.youtube.com/watch?v=0q_MKUynUck)
+* Create an `init.lua` file in your system. Use this command if you don't know the specific location of Neovim's configuration folder.
+
+```sh
+nvim --headless -c 'call mkdir(stdpath("config"), "p") | exe "edit" stdpath("config") . "/init.lua" | write | quit'
+```
+
+* Open your configuration file with Neovim.
+
+```sh
+nvim -c 'edit $MYVIMRC'
+```
+
+* Copy the content of `init.lua` in this repository into your own `init.lua`.
+
+* Download the plugin manager using this command.
+
+```sh
+nvim --headless +GitClonePacker
+```
+
+* Open Neovim. Plugins are not installed yet, so expect an error message. Dismiss the error message. Execute this command inside Neovim.
+
+```vim
+:PackerSync
+```
+
+* Wait until plugins are downloaded then restart Neovim.
+
+### Plugins directory
+
+Your plugins will be installed in a separate directory from your configuration. The location of this directory depends on your operating system and environment variables, so you'll need to execute this command to know where that is.
+
+```sh
+nvim --headless -c 'echo stdpath("data") . "/site/pack/packer" | quit'
+```
+
+## Autocomplete keybindings
+
+| Mode | Key | Action |
+| --- | --- | --- |
+| Insert | `<Ctrl-p>` | Move to previous item. |
+| Insert | `<Ctrl-n>` | Move to next item. |
+| Insert | `<Ctrl-d>` | Scroll up in documentation window. |
+| Insert | `<Ctrl-f>` | Scroll down in documentation window. |
+| Insert | `<Ctrl-Space>` | Trigger completion. |
+| Insert | `<Ctrl-e>` | Cancel completion. |
+| Insert | `<Enter>` | Confirm completion. |
+| Insert | `<Tab>` | If completion menu is open go to next item. |
+| Insert | `<Shift-Tab>` | If completion menu is open go to previous item. |
+
+## Plugin list
+
+| Name | Description  |
+| --- | --- |
+| [packer.nvim](https://github.com/wbthomason/packer.nvim) | Plugin manager. |
+| [onedark.vim](https://github.com/joshdick/onedark.vim) | Colorscheme based on Atom's default theme. |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Quickstart configs for Neovim's LSP client.  |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | Autocompletion engine. |
+| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) | nvim-cmp source. Show suggestions based on LSP servers queries. |
+| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | nvim-cmp source. Show suggestions based on installed snippets. |
+| [cmp-buffer](https://github.com/hrsh7th/cmp-buffer) | nvim-cmp source. Suggest words in the current buffer. |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip) | Snippet engine. |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | Collection of snippets. |
 
