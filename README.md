@@ -58,7 +58,25 @@ Your plugins will be installed in a separate directory from your configuration. 
 nvim --headless -c 'echo stdpath("data") . "/site/pack/packer" | quit'
 ```
 
-## Autocomplete keybindings
+## Keybindings
+
+| Mode | Key | Action |
+| --- | --- | --- |
+| Normal | `K` | Displays hover information about the symbol under the cursor. |
+| Normal | `gd` | Jump to the definition. |
+| Normal | `gD` | Jump to declaration. |
+| Normal | `gi` | Lists all the implementations for the symbol under the cursor. |
+| Normal | `go` | Jumps to the definition of the type symbol |
+| Normal | `gr` | Lists all the references. |
+| Normal | `<Ctrl-k>` | Displays a function's signature information. |
+| Normal | `<F2>` | Renames all references to the symbol under the cursor. |
+| Normal | `<F4>` | Selects a code action available at the current cursor position. |
+| Visual | `<F4>` | Selects a code action available in the selected text. |
+| Normal | `gl` | Show diagnostics in a floating window. |
+| Normal | `[d` | Move to the previous diagnostic. |
+| Normal | `]d` | Move to the next diagnostic. |
+
+### Autocomplete keybindings
 
 | Mode | Key | Action |
 | --- | --- | --- |
