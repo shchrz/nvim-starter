@@ -25,6 +25,8 @@ vim.cmd('colorscheme onedark')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
