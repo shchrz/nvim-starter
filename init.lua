@@ -98,9 +98,7 @@ vim.api.nvim_create_autocmd('User', {
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
-lsp_defaults.capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+lsp_defaults.capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lsp_defaults.on_attach = function()
   vim.api.nvim_exec_autocmds('User', {pattern = 'LspAttached'})
