@@ -11,9 +11,11 @@ The following language servers are configured:
 
 ## Requirements
 
-* Neovim v0.7 or greater.
+* Neovim v0.8 or greater.
 * git.
 * [npm cli](https://docs.npmjs.com/cli/v8/commands/npm). Javascript package manager. Required to download language servers automatically.
+
+> Here's the config [compatible with v0.7](https://github.com/VonHeikemen/nvim-starter/tree/dd978bf567f19edbdfe83e50935c0e0381b89f3a). 
 
 ## Installation
 
