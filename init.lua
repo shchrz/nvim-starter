@@ -70,8 +70,7 @@ cmp.setup({
 
 local lsp_cmds = vim.api.nvim_create_augroup('lsp_cmds', {clear = true})
 
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'LspAttached',
+vim.api.nvim_create_autocmd('LspAttach', {
   group = lsp_cmds,
   desc = 'LSP actions',
   callback = function()
@@ -103,10 +102,6 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   lsp_defaults.capabilities,
   require('cmp_nvim_lsp').default_capabilities()
 )
-
-lsp_defaults.on_attach = function()
-  vim.api.nvim_exec_autocmds('User', {pattern = 'LspAttached'})
-end
 
 lspconfig.html.setup({})
 lspconfig.cssls.setup({})

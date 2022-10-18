@@ -11,12 +11,14 @@ The following language servers are configured:
 
 ## Requirements
 
-* Neovim v0.7 or greater.
+* Neovim v0.8 or greater.
 * git.
 * [tsserver](https://github.com/theia-ide/typescript-language-server). Typescript language server.
 * [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted). Provides language servers for `eslint`, `css` and `html`.
 * [npm cli](https://docs.npmjs.com/cli/v8/commands/npm). Javascript package manager.
 * [nodejs](https://nodejs.org/es/). Javascript runtime. Required by the language servers.
+
+> Here's the config [compatible with v0.7](https://github.com/VonHeikemen/nvim-starter/tree/ca6e3dcc8bab3e21a1971549aee45bc7ca53dd4d). 
 
 ## Installation
 
