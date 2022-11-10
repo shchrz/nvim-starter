@@ -10,7 +10,7 @@ if not ok then return end
 
 packer.startup(function(use)
   use {'wbthomason/packer.nvim'}       -- Plugin manager
-  use {'joshdick/onedark.vim'}         -- Colorscheme
+  use {'folke/tokyonight.nvim'}        -- Colorscheme
   use {'neovim/nvim-lspconfig'}        -- LSP support
   use {'hrsh7th/nvim-cmp'}             -- Autocomplete engine
   use {'hrsh7th/cmp-nvim-lsp'}         -- Completion source
@@ -21,7 +21,7 @@ packer.startup(function(use)
 end)
 
 vim.opt.termguicolors = true
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme tokyonight')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
