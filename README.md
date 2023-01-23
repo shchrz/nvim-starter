@@ -98,7 +98,7 @@ nvim --headless -c 'echo stdpath("data") . "/site/pack/packer" | quit'
 | Name | Description  |
 | --- | --- |
 | [packer.nvim](https://github.com/wbthomason/packer.nvim) | Plugin manager. |
-| [tokyonight.vim](https://github.com/folke/tokyonight.vim) | Collection of colorschemes. |
+| [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | Collection of colorschemes. |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Quickstart configs for Neovim's LSP client.  |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | Autocompletion engine. |
 | [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) | nvim-cmp source. Show suggestions based on LSP servers queries. |
