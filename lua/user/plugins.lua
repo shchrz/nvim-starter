@@ -22,6 +22,7 @@ require('packer').startup(function(use)
   use {'wbthomason/packer.nvim'}
 
   -- Theming
+  use {'morhetz/gruvbox'}
   use {'folke/tokyonight.nvim'}
   use {'joshdick/onedark.vim'}
   use {'tanvirtin/monokai.nvim'}
@@ -39,6 +40,7 @@ require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     config = function() pcall(require, 'plugins.indent-blankline') end,
   }
+  --use {'ThePrimeagen/git-worktree.nvim'}
 
   -- File explorer
   use {
@@ -103,6 +105,12 @@ require('packer').startup(function(use)
   use {'hrsh7th/cmp-path'}
   use {'saadparwaiz1/cmp_luasnip'}
   use {'hrsh7th/cmp-nvim-lsp'}
+  use {
+		'fatih/vim-go',
+		run = ':GoUpdateBinaries',
+  }
+
+
 
   -- Snippets
   use {

@@ -7,4 +7,5 @@ vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 
 require('telescope').load_extension('fzf')
+--require("telescope").load_extension("git_worktree")
 

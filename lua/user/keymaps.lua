@@ -3,6 +3,10 @@ local group = vim.api.nvim_create_augroup('mapping_cmds', {clear = true})
 -- Space as leader key
 vim.g.mapleader = ' '
 
+-- Move Marked text
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Shortcuts
 vim.keymap.set({'n', 'x', 'o'}, '<leader>h', '^')
 vim.keymap.set({'n', 'x', 'o'}, '<leader>l', 'g_')
@@ -14,6 +18,12 @@ vim.keymap.set({'n', 'x'}, 'cv', '"+p')
 
 -- Delete text
 vim.keymap.set({'n', 'x'}, 'x', '"_x')
+
+-- Disable Arrow keys
+vim.keymap.set({'n', 'i'}, '<Left>', '<Nop>')
+vim.keymap.set({'n', 'i'}, '<Right>', '<Nop>')
+vim.keymap.set({'n', 'i'}, '<Up>', '<Nop>')
+vim.keymap.set({'n', 'i'}, '<Down>', '<Nop>')
 
 -- Commands
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
